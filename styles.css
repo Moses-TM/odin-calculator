@@ -98,6 +98,6 @@ button:active {
 button:disabled,
 button[disabled] {
   opacity: 1;        /* Prevents default fading */
-  color: inherit; /*   Keeps original text color */
+  color: inherit; /* Keeps original text color */
   cursor: not-allowed; /* Shows disabled cursor */
 }

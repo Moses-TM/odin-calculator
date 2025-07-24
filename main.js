@@ -43,6 +43,15 @@ function display(item){
 }
 
 function operate(operator){
+    deleteBtn.disabled = false;
+    //CONTINUE CALCULATIONS AFTER EQUALS IS CLICKED
+    if(initialNumber == null && resultNumber != null){
+        initialNumber = resultNumber;
+        resultNumber = null;
+        inputDisplay.textContent = '';
+        display(initialNumber);
+    }
+
     //INITIAL CONDITION
     if(initialNumber == null && resultNumber == null){
         initialNumber = parseFloat(presentNumber);
