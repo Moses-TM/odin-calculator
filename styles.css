@@ -93,3 +93,10 @@ button:active {
     align-content:space-between;
     width: 35%;
 }
+
+button:disabled,
+button[disabled] {
+  opacity: 1;        /* Prevents default fading */
+  color: inherit; /*   Keeps original text color */
+  cursor: not-allowed; /* Shows disabled cursor */
+}
