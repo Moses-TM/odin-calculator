@@ -124,4 +124,14 @@ document.addEventListener('DOMContentLoaded', () => {
             presentNumber = '0';
         }
     })
+
+    //CLEAR BUTTON
+    clearBtn.addEventListener('click', () => {
+        initialNumber = null;
+        presentNumber = '0';
+        currentOperator = null;
+        resultNumber = null;
+        inputDisplay.textContent = '';
+        outputDisplay.textContent = '';
+    })
 })
