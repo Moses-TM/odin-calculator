@@ -5,6 +5,7 @@ const deleteBtn = document.getElementById('delete');
 const equalBtn = document.getElementById('equal');
 const numberBtn = document.querySelectorAll('.numbers');
 const operatorBtn = document.querySelectorAll('.operator');
+const decimalBtn = document.getElementById('decimal');
 
 let initialNumber = null;
 let presentNumber = '0';
@@ -20,6 +21,7 @@ function getNumbers(number){
         display(presentNumber);
     }
     else if(presentNumber == '0'){
+        decimalBtn.disabled = false;
         presentNumber = number;
     }
     else{
@@ -134,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
         inputDisplay.textContent = '';
         outputDisplay.textContent = '';
         deleteBtn.disabled = false;
+        decimalBtn.disabled = false;
     })
 
     //DELETE BUTTON
@@ -154,6 +157,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 if(presentNumber.length > 1){
                     let updatedNumber = presentNumber.slice(0, -1);
                     presentNumber = updatedNumber;
+                    if(!presentNumber.includes('.')){
+                        decimalBtn.disabled = false;
+                    }
                 }
                 else{
                     presentNumber = '0';
@@ -161,6 +167,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             let displayContent = inputDisplay.textContent;
             inputDisplay.textContent = displayContent.slice(0, -1);
+        }
+    })
+
+    //DECIMAL BUTTON
+    decimalBtn.addEventListener('click', () => {
+        let checkDecimal = presentNumber;
+        if(checkDecimal.includes('.')){
+            decimalBtn.disabled = true;
+        }
+        else{
+            decimalBtn.disabled = false;
         }
     })
 })
