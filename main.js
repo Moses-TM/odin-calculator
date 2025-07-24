@@ -72,16 +72,20 @@ function operate(operator){
 function calculate(operator){
     let firstNumber = parseFloat(initialNumber);
     let secondNumber = parseFloat(presentNumber);
+    let result;
 
     switch(operator){
         case '+':
-            return firstNumber + secondNumber;
+            result = firstNumber + secondNumber;
+            break;
 
         case '-':
-            return firstNumber - secondNumber;
+            result = firstNumber - secondNumber;
+            break;
 
         case 'x':
-            return firstNumber * secondNumber;
+            result = firstNumber * secondNumber;
+            break;
 
         case '÷':
             if(secondNumber == 0){
@@ -93,9 +97,19 @@ function calculate(operator){
                 return;
             }
             else{
-                return firstNumber / secondNumber;
+                result = firstNumber / secondNumber;
+                break;
             }
     }
+
+    let resultString = result.toString();
+    if(resultString.includes('.') && resultString.split('.')[1].length > 3){
+       return result.toFixed(3);
+    }
+    else if(resultString.length > 14){
+        return result.toExponential(3);
+    }
+    return result;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
