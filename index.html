@@ -4,36 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
-    <script src="./main.js"></script>
+    <link href="https://fonts.cdnfonts.com/css/seven-segment" rel="stylesheet">
+    <script src="./main.js" defer></script>
     <title>Calculator</title>
 </head>
 <body>
     <div id="container">
-        <div id="display"></div>
+        <div id="display">
+            <div id="input"></div>
+            <div id="output"></div>
+        </div>
 
-        <div id="buttons">
-            <div id="num-pad">
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button>0</button>
-                <button>.</button>
+        <div id="buttons-container">
+
+            <div id="num-pad-container">
+                <button class="button-style display">7</button>
+                <button class="button-style display">8</button>
+                <button class="button-style display">9</button>
+                <button class="button-style display">4</button>
+                <button class="button-style display">5</button>
+                <button class="button-style display">6</button>
+                <button class="button-style display">1</button>
+                <button class="button-style display">2</button>
+                <button class="button-style display">3</button>
+                <button class="button-style display">0</button>
+                <button class="button-style display">.</button>
+                <button class="button-style" id="equal">=</button>
             </div>
-            <div id="operator">
-                <button>AC</button>
-                <button>DEL</button>
-                <button id="add">+</button>
-                <button id="subtract">-</button>
-                <button id="multiply">X</button>
-                <button id="divide">/</button>
+            <div id="operator-container">
+                <button class="edit-button-style" id="clear">AC</button>
+                <button class="edit-button-style" id="delete">DEL</button>
+                <button class="button-style display" id="add">+</button>
+                <button class="button-style display"id="subtract">-</button>
+                <button class="button-style display" id="multiply">*</button>
+                <button class="button-style display" id="divide">/</button>
             </div>
-            <button id="equal">=</button>
+
         </div>
     </div>
 </body>
