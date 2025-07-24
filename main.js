@@ -133,5 +133,34 @@ document.addEventListener('DOMContentLoaded', () => {
         resultNumber = null;
         inputDisplay.textContent = '';
         outputDisplay.textContent = '';
+        deleteBtn.disabled = false;
+    })
+
+    //DELETE BUTTON
+    deleteBtn.addEventListener('click', () => {
+        //DISABLE DELETE BUTTON AFTER RESULT IS DISPLAYED
+        if(outputDisplay.textContent != ''){
+            deleteBtn.disabled = true;
+        }
+
+        else{
+            deleteBtn.disabled = false;
+            //IF CURRENT INPUT IS A OPERATOR
+            if(presentNumber == '0' && currentOperator != null){
+                currentOperator = null;
+            }
+            //IF CURRENT INPUT IS A NUMBER
+            else{
+                if(presentNumber.length > 1){
+                    let updatedNumber = presentNumber.slice(0, -1);
+                    presentNumber = updatedNumber;
+                }
+                else{
+                    presentNumber = '0';
+                }
+            }
+            let displayContent = inputDisplay.textContent;
+            inputDisplay.textContent = displayContent.slice(0, -1);
+        }
     })
 })
