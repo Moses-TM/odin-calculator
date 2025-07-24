@@ -12,7 +12,14 @@ let currentOperator = null;
 let resultNumber = null;
 
 function getNumbers(number){
-    if(presentNumber == '0'){
+    //WHEN A NUMBER IS PRESSED AFTER EQUALS
+    if(initialNumber == null && currentOperator == null && resultNumber != null){
+        presentNumber = number;
+        resultNumber = null;
+        inputDisplay.textContent = '';
+        display(presentNumber);
+    }
+    else if(presentNumber == '0'){
         presentNumber = number;
     }
     else{
@@ -34,9 +41,12 @@ function display(item){
 }
 
 function operate(operator){
+    //INITIAL CONDITION
     if(initialNumber == null && resultNumber == null){
         initialNumber = parseFloat(presentNumber);
     }
+
+    //CONTINUOS OPERATIONS
     else if(currentOperator){
         let result = calculate(currentOperator);
         initialNumber = result.toString();
