@@ -95,4 +95,23 @@ document.addEventListener('DOMContentLoaded', () => {
             display(item);
         })
     })
+
+    //EQUALS BUTTON
+    equalBtn.addEventListener('click', () => {
+        if(currentOperator != null){
+            resultNumber = calculate(currentOperator);
+            outputDisplay.textContent = resultNumber;
+            initialNumber = null;
+            presentNumber = '0';
+            currentOperator = null;
+        }
+
+        //WHEN ONLY ONE NUMBER IS ENTERED BEFORE CLICKING EQUALS
+        else{
+            resultNumber = parseFloat(presentNumber);
+            outputDisplay.textContent = resultNumber;
+            initialNumber = null;
+            presentNumber = '0';
+        }
+    })
 })
