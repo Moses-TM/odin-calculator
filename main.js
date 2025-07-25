@@ -259,6 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'NumpadDivide': '/',
             'Backspace': 'backspace',
             'Enter': 'equals',
+            '=': 'equals',
             'Delete': 'clear',
         };
 
